@@ -4,10 +4,12 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function (nums, k) {
-  const len = nums.length;
-  const diff = len - k;
-  const splicedList = [...nums].splice(0, k + 1);
-  const restList = [...nums].slice(diff);
-  return [...restList, ...splicedList];
+  let result = [];
+  for (let i = 0; i < k; i++) {
+    let popedItem = nums.pop();
+    result.unshift(popedItem);
+  }
+  return [...result, ...nums];
 };
-rotate([1, 5, 9, 6, 7, 4, 56, 5], 4);
+
+rotate([1, 2, 3, 4, 5, 6, 7], 5);
