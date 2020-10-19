@@ -6,7 +6,7 @@
 var rotate = function (nums, k) {
   const len = nums.length;
   const diff = len - k;
-  const splicedList = [...nums].splice(0, k);
+  const splicedList = [...nums].splice(0, k + 1);
   const restList = [...nums].slice(diff);
   return [...restList, ...splicedList];
 };
